@@ -1,0 +1,15 @@
+--with "../components-dsa.gpr";
+with "components-dsa.gpr";
+
+project Components.DSA.Test_DSA_Server is
+   for Exec_Dir use ".";
+   for Source_Files use
+       (  "test_dsa_server.adb",
+          "test_dsa_server.ads",
+          "test_dsa_server_main.adb"
+       );
+   for Main use ("test_dsa_server_main.adb");
+   package Builder is
+      for Executable ("test_dsa_server_main.adb") use "test_dsa_server";
+   end Builder;
+end Components.DSA.Test_DSA_Server;

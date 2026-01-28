@@ -1,0 +1,20 @@
+with "strings_edit.gpr";
+with "components.gpr";
+
+project  Components.DSA is
+
+   for Source_Files use
+       (  --"s-parint.adb",
+          --"s-parint.ads",
+          "s-rpc.adb",
+          "s-rpc.ads"
+--          "system-partition_interface.adb",
+--          "system-partition_interface.ads"
+       );
+
+   package Compiler is
+      for Default_Switches ("ada") use
+          Components.Compiler'Default_Switches ("ada") & "-gnatg" & "-gnatws" & "-w";
+   end Compiler;
+       
+end Components.DSA;

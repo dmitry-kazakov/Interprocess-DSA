@@ -1,0 +1,14 @@
+with "components.gpr";
+with "components-dsa.gpr";
+
+project Components.DSA.Test_DSA_Client is
+   for Exec_Dir use ".";
+   for Source_Files use
+       (  "test_dsa_server_interface.ads",
+          "test_dsa_client.adb"
+       );                
+   for Main use
+       (  "test_dsa_client.adb"
+       );
+
+end Components.DSA.Test_DSA_Client;
