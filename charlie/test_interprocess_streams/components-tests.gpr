@@ -1,0 +1,26 @@
+with "components.gpr";
+
+
+project Components.Tests
+is
+   for Create_Missing_Dirs use "True";
+
+   for Source_Files use
+       ("test_interprocess_data.ads",
+        "test_interprocess_client.adb",
+        "test_interprocess_server.adb");
+
+   for Main use
+       ("test_interprocess_client.adb",
+        "test_interprocess_server.adb");
+
+   for Object_Dir use "build";
+   for Exec_Dir   use ".";
+
+   package Compiler renames Components.Compiler;
+   package Binder   renames Components.Binder;
+   package Builder  renames Components.Builder;
+   package Linker   renames Components.Linker;
+
+end Components.Tests;
+
