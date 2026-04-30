@@ -76,9 +76,6 @@ begin
           );
       Put_Line ("Reading stream");
 
-      Reset (Data.Not_Full_Event);
-      Reset (Data.Not_Empty_Event);
-
       declare
          File   : File_Type;
          Buffer : String (1..2048);
