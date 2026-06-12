@@ -1,0 +1,25 @@
+with "../dsa_fs";
+
+project Client
+is
+
+   for Source_Dirs use ("both", "client");
+   for Object_Dir  use "build/client";
+   for Exec_Dir    use "bin";
+   for Main        use ("client.adb");
+
+   for Create_Missing_Dirs use "True";
+
+
+   package Compiler
+   is
+      for Switches ("api.ads") use ("-gnatzc");
+   end Compiler;
+
+
+   package Binder
+   is
+      for Switches ("Ada") use ("-Es");      --  Symbolic traceback
+   end Binder;
+
+end Client;
